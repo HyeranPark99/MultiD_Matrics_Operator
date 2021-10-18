@@ -1,5 +1,6 @@
 package com.exceptionthrow.www;
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MultiDArray {
@@ -10,11 +11,16 @@ public class MultiDArray {
 	 */
 	public static void main(String args[]) throws VectorMismatchExcption {
 		
+		List<Integer> temp = new ArrayList<Integer>();
+		List<Integer> temp2 = new ArrayList<Integer>();
+		
+		
 		/**
 		 * Printing this program's instruction.
 		 */
-		System.out.println("Numbers inside of matrices will be randomly picked from 0 to 100.");
-		System.out.println("After creating matrices, this program will multiply both matrices.");
+		System.out.println("This program will multiply two float type matrices.");
+		System.out.println("Type the elements in order left to right. ");
+		System.out.println("eg. If the matrix is 2X2, eg. a11->a12->a21->a22");
 		System.out.println();
 		
 		/**
@@ -30,15 +36,31 @@ public class MultiDArray {
 		 * @param c2 column of the matrix 2
 		 */
 		System.out.println("Please type row of Matrix1");
-		int r1 = in.nextInt();
+		int r1 = in.nextInt();		
 		System.out.println("Please type column of Matrix1");
 		int c1 = in.nextInt();
+		
+		
+		System.out.println("Please type "+ r1*c1+ " elements of Matrix1");
+		for(int i = 0; i < r1*c1 ; i++) {
+			int input = in.nextInt();
+			temp.add(input);
+		}
+		
+		
+		
 		System.out.println("Please type row of Matrix2");
 		int r2 = in.nextInt();
 		System.out.println("Please type column of Matrix2");
 		int c2 = in.nextInt();
 		System.out.println();
 
+		
+		System.out.println("Please type "+ r2*c2+ " elements of Matrix1");
+		for(int i = 0; i < r2*c2 ; i++) {
+			int input = in.nextInt();
+			temp2.add(input);
+		}
 		
 		
 		
@@ -62,35 +84,31 @@ public class MultiDArray {
 		int i,j,k = 0;	
 		float m3 = 0;		
 
-					
-		/**
-		 * for loop that fills inside of Matrix1 with random numbers from 0 to 100
-		 * And print Matrix 1 
-		 * @param r1 row of the matrix1 
-		 * @param c1 column of the matrix1
-		 * @param i variable of the first for loop statement and position indicator of a matrix 
-		 * @param j variable of the second for loop statement and position indicator of a matrix
-		 */
+		
+		// read inputs and assign them to a matrix
+		int token=0;
 		for(i=0; i< r1; i++) {
 			for(j = 0; j < c1; j++) {
-				twoD1[i][j] = getNumbers(0,100);	
+				twoD1[i][j] = temp.get(token+j);
+		
 			}
+			
+			token =j*(i+1);
 		}	
 		
+	
 		
-		/**
-		 * for loop that fills inside of Matrix2 with random numbers from 0 to 100
-		 * And print Matrix 2
-		 * @param r2 row of the matrix2 
-		 * @param c2 column of the matrix2
-		 * @param i variable of the first for loop statement and position indicator of a matrix 
-		 * @param j variable of the second for loop statement and position indicator of a matrix
-		 */
+		// read inputs and assign them to a matrix
+		int token2=0;
 		for(i=0; i< r2; i++) {
 			for(j = 0; j < c2; j++) {
-				twoD2[i][j] = getNumbers(0,100);		
+				twoD2[i][j] = temp2.get(token2+j);	
 			}
-		}	
+			token2 =j*(i+1);
+			System.out.println(token2);
+		}
+		
+		
 		
 		/**
 		 * Try block that contains matrix printout statements and multiplication 
@@ -124,16 +142,20 @@ public class MultiDArray {
 	
 
 	
-	/**
-	 * A method to get random numbers for a matrix
-	 * @param s Random type instance variable 
-	 * @param min minimum number
-	 * @param max maximum number
-	 * @return random number from 0 to 100
-	 */
-	private static int getNumbers(int min, int max) {
-		
-		Random s = new Random();
-		return s.nextInt((max-min)+1)+min;
-	}
+//	/**
+//	 * A method to get random numbers for a matrix
+//	 * @param s Random type instance variable 
+//	 * @param min minimum number
+//	 * @param max maximum number
+//	 * @return random number from 0 to 100
+//	 */
+//	private static int getNumbers(int min, int max) {
+//		
+//		Random s = new Random();
+//		return s.nextInt((max-min)+1)+min;
+//	}
+	
+	
+
+	
 }
