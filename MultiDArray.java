@@ -20,7 +20,7 @@ public class MultiDArray {
 		 */
 		System.out.println("This program will multiply two float type matrices.");
 		System.out.println("Type the elements in order left to right. ");
-		System.out.println("eg. If the matrix is 2X2, eg. a11->a12->a21->a22");
+		System.out.println("eg. If the matrix is 2X2, input the numbers in following order a11->a12->a21->a22");
 		System.out.println();
 		
 		/**
