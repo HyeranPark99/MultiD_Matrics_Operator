@@ -12,8 +12,7 @@ CONTENTS OF THIS FILE
  
  ### Installation
  
- 1. Open Eclipse IDE -> Click on File -> Import -> Git -> Projects from Git(or with Samrt Improt)-> Clone URI
--> Paste Url git clone https://github.com/HyeranPark99/MultiD_Matrics_Operator.git -> Master ->Next ->Next -> Finish<br/>
+ 1. Open Eclipse IDE -> Click on File -> Import -> Git -> Projects from Git(or with Samrt Improt)-> Paste Url git clone https://github.com/HyeranPark99/MultiD_Matrics_Operator.git -> Master ->Next ->Next -> Finish<br/>
  
  2. Import it in eclipse IDE or any other Java IDE.
  
